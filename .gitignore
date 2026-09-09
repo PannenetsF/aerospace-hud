@@ -1,0 +1,5 @@
+# Compiled binaries / build artifacts
+*.o
+aerospace-hud
+/build/
+.DS_Store
