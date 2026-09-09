@@ -33,6 +33,27 @@ callback, that draws a HUD on every screen and stays out of the way otherwise.
 
 ## Install
 
+### Homebrew (recommended)
+
+```sh
+brew install PannenetsF/tap/aerospace-hud
+```
+
+Then tell AeroSpace to touch the dirty file whenever the workspace changes. In
+`~/.config/aerospace/aerospace.toml`:
+
+```toml
+exec-on-workspace-change = ['/bin/sh', '-c', 'printf . > /tmp/aerospace-workspace-indicator-dirty']
+```
+
+And start it as a background service:
+
+```sh
+brew services start aerospace-hud
+```
+
+### From source
+
 ```sh
 git clone https://github.com/PannenetsF/aerospace-hud.git
 cd aerospace-hud
@@ -43,8 +64,7 @@ The launcher compiles `workspace_indicator.swift` on first run (and whenever the
 source is newer than the cached binary), caches the binary under
 `~/Library/Caches/aerospace-hud`, and execs it.
 
-Then tell AeroSpace to touch the dirty file whenever the workspace changes. In
-`~/.config/aerospace/aerospace.toml`:
+The dirty-file wiring is the same as above:
 
 ```toml
 exec-on-workspace-change = ['/bin/sh', '-c', 'printf . > /tmp/aerospace-workspace-indicator-dirty']
