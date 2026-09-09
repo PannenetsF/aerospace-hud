@@ -7,6 +7,12 @@ workspaces on that monitor and the app icons of the windows in the focused one.
 On a workspace switch, a large workspace number briefly fades in over the
 center of the display it happened on.
 
+![aerospace-hud sample](docs/sample.png)
+
+*Rendered mockup: the floating panel (workspaces + focused-workspace app icons)
+top-left, and the center switch overlay. Colors, sizes and radii are taken
+straight from the drawing code.*
+
 It is a single self-contained Swift file using only AppKit — no sketchybar, no
 menu-bar helper, no configuration file. It talks to AeroSpace purely through the
 `aerospace` CLI.
